@@ -4,12 +4,12 @@ function App() {
     userId: 1,
     id: 1,
     title: "koma",
-    completed: false, 
+    completed: true, 
 };
   return (
     <>
       <h1>hi</h1>
-      <ToDo/>
+      <ToDo {...todo}/>
     </>
   );
 }

@@ -1,13 +1,21 @@
+import { useEffect, useState } from "react";
 import ToDo from './ToDo.js';
+
 function App() {
-  const todo = {
-    userId: 1,
-    id: 1,
-    title: "koma",
-    completed: true, 
-};
+  const [todo, setTodo] = useState({});
+
+
+  useEffect(()=>{
+    async function getToDo(){
+      const response = await fetch('https://jsonplaceholder.typicode.com/todos/1')
+      const data = await response.json();
+      setTodo(data);
+      }
+  getToDo();
+  }, []);
   return (
     <>
+      
       <h1>hi</h1>
       <ToDo {...todo}/>
     </>

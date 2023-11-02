@@ -6,7 +6,7 @@ function ToDo(props){
     function handleChange(event){
         setRuncuks(event.target.checked)
     }
-    console.log(runcuks);
+
     return(
         <div>
             <p>{props.userId}</p>

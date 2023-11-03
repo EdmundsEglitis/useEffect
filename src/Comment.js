@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState,  } from "react";
 
-function Comment(props) {
+function Comment() {
          const [comments, setComments] = useState({});
          const [loading, setLoading] = useState(true);
 
@@ -9,20 +9,29 @@ function Comment(props) {
             const response = await fetch('https://jsonplaceholder.typicode.com/comments/5')
             const data = await response.json();
             setComments(data);
-            }
+            setLoading(false);
+            };
         getComments();
-        setLoading(false)
         }, []);
+        function returns(){
+            if (loading == false){
+                return <>
+                    <p>{comments.postId}</p>
+                    <p>{comments.id}</p>
+                    <p>{comments.name}</p>
+                    <p>{comments.email}</p>
+                    <p>{comments.body}</p>
+                    </>
+            }
+            else {
+                return <p> loading</p>
+            }
+        }
 
-        console.log(Comment.postId);
 
     return(
         <>
-        <p>{Comment.postId}</p>
-        <p>{Comment.id}</p>
-        <p>{Comment.name}</p>
-        <p>{Comment.email}</p>
-        <p>{Comment.body}</p>
+            {returns()}
         </>
     );
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import User from './User.js';
 
 function Post() {
   const [posts, setPosts] = useState([]);
@@ -18,10 +19,8 @@ function Post() {
     if (loading) {
       return <p>Loading...</p>;
     }
-
     return posts.map((post) => (
       <div key={post.id}>
-        <p>Post ID: {post.userId}</p>
         <p>Post ID: {post.id}</p>
         <p>Title: {post.title}</p>
         <p>Body: {post.body}</p>
@@ -30,7 +29,11 @@ function Post() {
     ));
   }
 
-  return <>{renderPosts()}</>;
-}
+  return(
+    <>
+    {renderPosts()}
+    </>
+  );
 
+  }
 export default Post;

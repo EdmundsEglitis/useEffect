@@ -19,8 +19,9 @@ const [loading, setLoading] = useState(true);
   }, []);
   return (
     <div>
-      { loading ? <p>loading!!!!!!!!!</p> : <User {...User}/> }
+        { loading ? <p>loading!!!!!!!!!</p> : <Post {...Post}/> }
     </div>
+    //{ loading ? <p>loading!!!!!!!!!</p> : <User {...User}/> }
     //{ loading ? <p>loading!!!!!!!!!</p> : <Post {...Post}/> }
     //{ loading ? <p>loading!!!!!!!!!</p> : <Post {...Post}/> }
     //{ loading ? <p>text loading</p> : <ToDo {...todo}/>}

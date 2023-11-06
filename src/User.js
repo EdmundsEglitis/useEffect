@@ -14,27 +14,23 @@ function User() {
     getusers();
   }, []);
 
-  function renderusers() {
+  function renderUsers() {
     if (loading) {
       return <p>Loading...</p>;
     }
 
     return Users.map((user) => (
       <div key={user.name}>
-        <p>user ID: {user.id}</p>
-        <p>Name: {user.name}</p>
-        <p>Username: {user.username}</p>
-        <p>Email: {user.email}</p>
-        <p>Street: {user.address.street}</p>
-        <p>Suite: {user.address.city}</p>
-        <p>Zipcode: {user.address.zipcode}</p>
-
+            <p>user ID: {user.id}</p>
+            <p>Name: {user.name}</p>
+            <p>Username: {user.username}</p>
+            <p>Email: {user.email}</p>
+            <p>Street: {user.address.street}</p>
+            <p>Suite: {user.address.city}</p>
+            <p>Zipcode: {user.address.zipcode}</p>
         <h2>.</h2>
       </div>
     ));
   }
-
-  return <>{renderusers()}</>;
 }
-
 export default User;
